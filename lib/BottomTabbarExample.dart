@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:weather/homepage.dart';
+import 'package:weather/mappage.dart';
+import 'package:weather/settingspage.dart';
 
 class BottomTabbarExample extends StatefulWidget {
   const BottomTabbarExample({Key? key}) : super(key: key);
@@ -12,9 +15,9 @@ class _BottomTabbarExampleState extends State<BottomTabbarExample>
   late TabController _tabController;
 
   static const _kTabPages = <Widget>[
-    Center(child: Icon(Icons.home, size: 64.0, color: Colors.green)),
-    Center(child: Icon(Icons.map, size: 64.0, color: Colors.green)),
-    Center(child: Icon(Icons.settings, size: 64.0, color: Colors.green)),
+    HomePge(),
+    MapPage(),
+    SettingsPage(),
   ];
   static const _kTabs = <Tab>[
     Tab(icon: Icon(Icons.home), text: 'Сущность'),
@@ -44,7 +47,8 @@ class _BottomTabbarExampleState extends State<BottomTabbarExample>
           title: const Text('951032'),
           backgroundColor: Colors.green
       ),
-      body: TabBarView(
+      body:
+      TabBarView(
         controller: _tabController,
         children: _kTabPages,
       ),
